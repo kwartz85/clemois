@@ -1,0 +1,21 @@
+{
+    "name": "imie-clemois/doctrineRefactory",
+    "description": "Doctrine getting started",
+    "require": {
+        "doctrine/orm": "^2.5",
+        "symfony/yaml": "^3.2"
+    },
+    "authors": [
+        {
+            "name": "Francois Masson",
+            "email": "masson.francois@gmail.com"
+        },
+        {
+            "name": "Clemence Laudren",
+            "email": "clemence@laudren.me"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"Imie\\": "src/"}
+    }
+}
