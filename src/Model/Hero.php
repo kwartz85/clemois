@@ -12,6 +12,7 @@ namespace Imie\Model;
 class SuperHeroDTO
 {
     /******************* Attributs *******************/
+
     private $heroID;
     private $heroFirstName;
     private $heroLastName;
@@ -19,33 +20,11 @@ class SuperHeroDTO
     Private $heroCountry;
     private $heroTeamId;
     private $superPowers = [];
+    /**
+     * @ManytoOne(targetEntity="HeroPower", mappedBy="hero")
+     */
+    private $heroPower;
 
-    /****************** Method ***********************/
-
-    public function hydrate($datas){
-        foreach ($datas as $key => $value){
-            $newKey = '';
-            $flag = false;
-            $ii=0;
-           while ( $ii < strlen($key)){
-                if($key[$ii]==='_'){
-                    $flag = true;
-                }else{
-                    if($flag){
-                        $newKey .= strtoupper($key[$ii]);
-                        $flag = false;
-                    }else {
-                        $newKey .= $key[$ii];
-                    }
-                }
-               $ii++;
-           }
-           $newKey = 'set'.ucfirst($newKey);
-            if(method_exists($this,$newKey)){
-                $this->$newKey($value);
-            }
-        }
-    }
 
     /**
      * @return mixed

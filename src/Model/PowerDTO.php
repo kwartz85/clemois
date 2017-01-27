@@ -15,7 +15,10 @@ class PowerDTO
     private $powerId;
     private $powerName;
     private $powerDesc;
-
+    /**
+     * @ManytoOne(targetEntity="HeroPower", mappedBy="power")
+     */
+    private $heroPower;
     //************************** Method ********************************************/
 
     /**
