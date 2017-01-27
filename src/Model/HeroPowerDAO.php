@@ -6,7 +6,7 @@
  * Time: 15:15
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 
 class HeoPowerDAO extends Connexion

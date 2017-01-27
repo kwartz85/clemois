@@ -14,7 +14,7 @@
 <body>
 
 <header>
-    <h1>Bienvenue dans un monde de super heros</h1>
+    <h1>Bienvenue dans un monde de super heros à Clémence et François</h1>
 </header>
 <hr>
 <?php include_once ('./src/View/common/nav.php');?>
@@ -27,7 +27,7 @@
 </main>
 <hr>
 <footer>
-    tous droits réservés pour IMIE
+    tous droits réservés pour nous !
 </footer>
 </body>
 </html>

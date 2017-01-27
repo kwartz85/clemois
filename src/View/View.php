@@ -6,7 +6,7 @@
  * Time: 12:20
  */
 
-namespace src\View;
+namespace Imie\View;
 
 
 class View

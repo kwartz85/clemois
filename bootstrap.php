@@ -4,7 +4,6 @@
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
-require_once "autoload.php";
 
 $isDevMode = true;
 $config = Setup::createAnnotationMetadataConfiguration(array("src/Model"), $isDevMode);

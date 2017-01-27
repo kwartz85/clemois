@@ -6,9 +6,9 @@
  * Date: 21/12/2016
  * Time: 11:29
  */
-namespace src\Model;
+namespace Imie\Model;
 
-use src\Model\SuperHeroDTO;
+use Imie\Model\SuperHeroDTO;
 
 class SuperHeroDAO extends Connexion
 {

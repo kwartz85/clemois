@@ -6,13 +6,13 @@
  * Time: 09:42
  */
 
-namespace src\Controller;
+namespace Imie\Controller;
 
-use src\Model\PowerDAO;
-use src\Model\PowerDTO;
-use src\View\View;
+use Imie\Model\PowerDAO;
+use Imie\Model\PowerDTO;
+use Imie\View\View;
 
-class PowerController
+class PowerController extends Controller
 {
     private $powerDAO;
     private $powerDTO;

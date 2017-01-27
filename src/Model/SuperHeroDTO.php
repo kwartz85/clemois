@@ -7,7 +7,7 @@
  * Time: 16:13
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 class SuperHeroDTO
 {

@@ -6,15 +6,16 @@
  * Date: 21/12/2016
  * Time: 11:38
  */
-namespace src\Controller;
+namespace Imie\Controller;
 
-use src\View\View;
+use Imie\Controller\Controller;
+use Imie\View\View;
 
-class DefaultController
+class DefaultController extends Controller
 {
     public function indexAction(){
         $view = new View('default','index');
-        return $view->renderView(['default'=>null]);
+        return $view->renderView([]);
 
     }
 

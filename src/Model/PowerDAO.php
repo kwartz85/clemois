@@ -6,7 +6,7 @@
  * Time: 10:17
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 
 

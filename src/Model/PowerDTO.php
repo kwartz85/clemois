@@ -6,7 +6,7 @@
  * Time: 10:18
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 
 class PowerDTO

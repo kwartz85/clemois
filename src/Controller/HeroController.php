@@ -6,17 +6,17 @@
  * Time: 14:24
  */
 
-namespace src\Controller;
+namespace Imie\Controller;
 
-use src\Model\HeroPowerDTO;
-use src\Model\PowerDAO;
-use src\Model\SuperHeroDAO;
-use src\Model\SuperHeroDTO;
-use src\Model\TeamDAO;
-use src\Model\TeamDTO;
-use src\View\View;
+use Imie\Model\HeroPowerDTO;
+use Imie\Model\PowerDAO;
+use Imie\Model\SuperHeroDAO;
+use Imie\Model\SuperHeroDTO;
+use Imie\Model\TeamDAO;
+use Imie\Model\TeamDTO;
+use Imie\View\View;
 
-class HeroController
+class HeroController extends Controller
 {
     private $heroDAO;
     private $heroDTO;

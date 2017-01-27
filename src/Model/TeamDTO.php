@@ -6,7 +6,7 @@
  * Time: 09:36
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 
 class TeamDTO

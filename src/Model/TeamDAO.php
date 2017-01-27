@@ -6,7 +6,7 @@
  * Time: 09:59
  */
 
-namespace src\Model;
+namespace Imie\Model;
 
 class TeamDAO extends Connexion
 {

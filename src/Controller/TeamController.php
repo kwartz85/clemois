@@ -6,14 +6,14 @@
  * Time: 09:42
  */
 
-namespace src\Controller;
+namespace Imie\Controller;
 
 
-use src\Model\TeamDAO;
-use src\Model\TeamDTO;
-use src\View\View;
+use Imie\Model\TeamDAO;
+use Imie\Model\TeamDTO;
+use Imie\View\View;
 
-class TeamController
+class TeamController extends Controller
 {
     private $teamDTO;
     private $teamDAO;

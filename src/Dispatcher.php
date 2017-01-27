@@ -3,7 +3,7 @@
 
 namespace Imie;
 
-use src\Controller\DefaultController;
+use Imie\Controller\DefaultController;
 
 class Dispatcher
 {
@@ -21,7 +21,6 @@ class Dispatcher
         $this->defControl = new DefaultController($this->em);
     }
 
-
     public function dispatch()
     {
         $flag = true;
@@ -31,7 +30,7 @@ class Dispatcher
                 $path = __DIR__ . DIRECTORY_SEPARATOR .'Controller' . DIRECTORY_SEPARATOR . ucfirst($this->result[0]) . 'Controller.php';
                 $controller = '\\Imie\\Controller\\' . ucfirst($this->result[0]) . 'Controller';
                 $action = $this->result[1] . 'Action';
-                if (file_exists($path))
+                if (file_exists($path)) {
                     // Don't forget to give Doctrine to the controller
                     $theController = new $controller($this->em);
                     if (method_exists($theController, $action)) {
@@ -53,4 +52,4 @@ class Dispatcher
         $url = trim($url,'\/');
         $this->result = array_slice(preg_split($pattern,$url), 2);
     }
-}}
+}
