@@ -11,10 +11,9 @@ namespace Imie\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @Model
+ * @Entity
  * @Table(name="hero_power")
  */
-
 class HeroPower
 {
     //************************** Attributes ****************************************/
@@ -23,7 +22,7 @@ class HeroPower
     * @GeneratedValue
     * @Column(type="integer")
     **/
-    private $heroPowerID;
+    private $id;
 
     /**
      * @Column(type="integer")
@@ -40,7 +39,7 @@ class HeroPower
      **/
     private $heroPowerLevel;
 
-     /**
+     /* Add * to Annotate
      * @OneToMany(targetEntity="Hero", mappedBy="heroPower")
      */
     private $hero;
@@ -53,14 +52,9 @@ class HeroPower
     //***************************Getters and setters *******************************/
 
 
-    public function getHeroPowerID()
+    public function getId()
     {
-        return $this->heroPowerID;
-    }
-
-    public function setHeroPowerID($heroPowerID)
-    {
-        $this->heroPowerID = $heroPowerID;
+        return $this->id;
     }
 
     public function getHeroPowerHeroID()

@@ -8,26 +8,22 @@
 
 namespace Imie\Controller;
 
-use Imie\Model\PowerDAO;
-use Imie\Model\PowerDTO;
+use Imie\Model\Power;
 use Imie\View\View;
 
 class PowerController extends Controller
 {
-    private $powerDAO;
-    private $powerDTO;
 
-    public function __construct()
-    {
-        $this->powerDAO = new PowerDAO();
-        $this->powerDTO = new PowerDTO();
-    }
 
-    public function getAllAction($datas=null,$powerUpdate=null)
+    public function getAllAction()
     {
-        $powers = $this->powerDAO->getAllPower();
-        $view = new View('power','allPower');
-        return $view->renderView(['powers'=>$powers,'powerUpdate'=>$powerUpdate]);
+               return $this->render('power','allPower', [
+                   'powers'=>$this->getDoctrine()
+                    ->getRepository('\Imie\Model\Power')
+                    ->findAll()
+
+               ]);
+
     }
 
     public function getOneAction($datas=null)

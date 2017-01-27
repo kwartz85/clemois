@@ -6,6 +6,7 @@
  * Date: 21/12/2016
  * Time: 11:29
  */
+
 namespace Imie\Model;
 
 use Imie\Model\SuperHeroDTO;
@@ -101,4 +102,4 @@ class SuperHeroDAO extends Connexion
         $this->requestDB($sql,$params);
     }
 
-}
+} */
