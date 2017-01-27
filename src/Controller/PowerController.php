@@ -26,26 +26,17 @@ class PowerController extends Controller
 
     }
 
-    public function getOneAction($datas=null)
-    {
-        if(isset($datas[2])) {
-            $this->powerDTO->setPowerId($datas[2]);
-            $powerDTO = $this->powerDAO->getOnePower($this->powerDTO);
-            return $this->getAllAction($datas,$powerDTO);
-        }else{
-            header("location: ". "localhost/".PATH ."/index.php/power/getAll");
-        }
-        return null;
-    }
 
-    public function InsertAction()
+    public function InsertAction($args)
         {
-       $powers = new Power();
+       $power = new Power();
        $em = $this->getDoctrine();
+
+
        if (isset($_POST['powerName'])&& isset($_POST['powerDesc'])){
-           $powers->setPowerDesc(strip_tags($_POST['powerDesc']));
-           $powers->setPowerName($_POST['powerName']);
-           $em->persist($powers);
+           $power->setPowerDesc(strip_tags($_POST['powerDesc']));
+           $power->setPowerName($_POST['powerName']);
+           $em->persist($power);
            $em->flush();
 
            header("location: ". PATH . "/index.php/power/getAll");
@@ -53,18 +44,28 @@ class PowerController extends Controller
        }
 
         return $this->render('power','insert',[
-            "powers" => $powers
+            "power" => $power
         ]);
     }
 
-    public function UpdateAction($datas=null)
+    public function UpdateAction($args)
     {
-        if(isset($datas[2])) {
-            $this->powerDTO->setPowerId($datas[2]);
-            $this->powerDTO->hydrate($_POST);
-            $this->powerDAO->updatePower($this->powerDTO);
+        if(!isset($args[2])){
+            header("location: /".PATH."/index.php/power/getAll");
+
         }
-        header("location: /".PATH."/index.php/power/getAll");
+
+        $em = $this->getDoctrine();
+        $power = $em->getRepository('\Imie\Model\Power')
+                    ->find($args[2])
+                    ->flush();
+
+
+        return $this->render('power', 'update', [
+            "power" => $power
+        ]);
+
+
 
     }
 

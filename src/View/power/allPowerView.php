@@ -14,12 +14,12 @@
             ?>
             <tr>
                 <td><?= $power->getId() ?></td>
-                <td><a href="<?= PATH ?>/index.php/power/getOne/<?= $power->getId()?>"><?= $power->getPowerName() ?></a></td>
+                <td><a href="<?= PATH ?>/index.php/power/insert/<?= $power->getId()?>"><?= $power->getPowerName() ?></a></td>
                 <td><?= $power->getPowerDesc() ?></td>
 
                 <td>
                     <a href="<?= PATH ?>/index.php/power/delete/<?= $power->getId()?>" class="fa fa-trash"></a>
-                    <a href="<?= PATH ?>/index.php/power/getOne/<?= $power->getId()?>" class="fa fa-pencil-square-o"></a>
+                    <a href="<?= PATH ?>/index.php/power/update/<?= $power->getId()?>" class="fa fa-pencil-square-o"></a>
                 </td>
             </tr>
             <?php
@@ -43,7 +43,7 @@
                        value="<?= (isset($powerUpdate))? $powerUpdate->getPowerName():''; ?>"
                        id="powerName"
                        class="form-control"
-                       placeholder="saissez le nom d'un pouvoir">
+                       placeholder="saisissez le nom d'un pouvoir">
             </div>
         </div>
         <div class="form-group">
