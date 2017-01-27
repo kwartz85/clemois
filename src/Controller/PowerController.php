@@ -33,16 +33,28 @@ class PowerController extends Controller
             $powerDTO = $this->powerDAO->getOnePower($this->powerDTO);
             return $this->getAllAction($datas,$powerDTO);
         }else{
-            header("location: /".PATH."/index.php/power/getAll");
+            header("location: ". "localhost/".PATH ."/index.php/power/getAll");
         }
         return null;
     }
 
     public function InsertAction()
-    {
-        $this->powerDTO->hydrate($_POST);
-        $this->powerDAO->insertPower($this->powerDTO);
-        header("location: /". PATH . "/index.php/power/getAll");
+        {
+       $powers = new Power();
+       $em = $this->getDoctrine();
+       if (isset($_POST['powerName'])&& isset($_POST['powerDesc'])){
+           $powers->setPowerDesc(strip_tags($_POST['powerDesc']));
+           $powers->setPowerName($_POST['powerName']);
+           $em->persist($powers);
+           $em->flush();
+
+           header("location: ". PATH . "/index.php/power/getAll");
+
+       }
+
+        return $this->render('power','insert',[
+            "powers" => $powers
+        ]);
     }
 
     public function UpdateAction($datas=null)

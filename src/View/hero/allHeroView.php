@@ -22,12 +22,12 @@
                 <td><?= $oneHero->getHeroTeamId()->getTeamName()?></td>
                 <td>
                     <a
-                        href="/<?= PATH ?>/index.php/hero/delete/<?= $oneHero->getHeroID()?>"
+                        href="<?= PATH ?>/index.php/hero/delete/<?= $oneHero->getHeroID()?>"
                         class="fa fa-trash" aria-hidden="true">
 
                     </a>
                     <a
-                        href="/<?= PATH ?>/index.php/hero/getOne/<?= $oneHero->getHeroID()?>"
+                        href="<?= PATH ?>/index.php/hero/getOne/<?= $oneHero->getHeroID()?>"
                         class="fa fa-pencil" aria-hidden="true">
 
                     </a>
@@ -39,7 +39,7 @@
 </section>
 <hr>
 <section>
-    <form action="/<?= PATH ?>/index.php/hero/insert" method="post">
+    <form action="<?= PATH ?>/index.php/hero/insert" method="post">
         <fieldset>
             <legend>Ajouter un super hero</legend>
             <div class="form-group">

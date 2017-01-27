@@ -13,13 +13,13 @@
         foreach ($powers as $power){
             ?>
             <tr>
-                <td><?= $power->getPowerId() ?></td>
-                <td><a href=/<?= PATH ?>/index.php/power/getOne/<?= $power->getPowerId()?>"><?= $power->getPowerName() ?></a></td>
+                <td><?= $power->getId() ?></td>
+                <td><a href="<?= PATH ?>/index.php/power/getOne/<?= $power->getId()?>"><?= $power->getPowerName() ?></a></td>
                 <td><?= $power->getPowerDesc() ?></td>
 
                 <td>
-                    <a href="/<?= PATH ?>/index.php/power/delete/<?= $power->getPowerId()?>" class="fa fa-trash"></a>
-                    <a href="/<?= PATH ?>/index.php/power/getOne/<?= $power->getPowerId()?>" class="fa fa-pencil-square-o"></a>
+                    <a href="<?= PATH ?>/index.php/power/delete/<?= $power->getId()?>" class="fa fa-trash"></a>
+                    <a href="<?= PATH ?>/index.php/power/getOne/<?= $power->getId()?>" class="fa fa-pencil-square-o"></a>
                 </td>
             </tr>
             <?php
@@ -32,7 +32,7 @@
 </section>
 <hr>
 <section class="container-fluid">
-<form action="<?= (isset($powerUpdate))? "/". PATH ."/index.php/power/update/".$powerUpdate->getPowerId(): "/".PATH."/index.php/power/insert"; ?>" method="POST" class="form-horizontal">
+<form action="<?= (isset($powerUpdate))?  PATH ."/index.php/power/update/".$powerUpdate->getPowerId(): PATH."/index.php/power/insert"; ?>" method="POST" class="form-horizontal">
     <fieldset>
         <legend><?= (isset($powerUpdate))? 'Modification d\'un super pouvoir':'Création de nouveaux supers pouvoirs'; ?></legend>
         <div class="form-group">
